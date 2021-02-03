@@ -76,7 +76,7 @@ script: |
     make install
     cd ..
     #
-    # Need mingw-compiled openssl from VADE-deps:
+    # Need mingw-compiled openssl from Corgicoin-deps:
     cd $DEPSDIR
     tar xf $INDIR/Corgicoin-deps-win${BITS}-gitian.tar.xz
     #
