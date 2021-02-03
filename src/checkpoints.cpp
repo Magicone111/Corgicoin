@@ -37,7 +37,7 @@ namespace Checkpoints
     ;
 
     bool CheckHardened(int nHeight, const uint256& hash)
-{
+   {
         MapCheckpoints& checkpoints = (fTestNet ? mapCheckpointsTestnet : mapCheckpoints);
 
         MapCheckpoints::const_iterator i = checkpoints.find(nHeight);
