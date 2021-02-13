@@ -67,7 +67,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "VADE Signed Message:\n";
+const string strMessageMagic = "Corgicoin Signed Message:\n";
 
 // Settings
 int64_t nTransactionFee = MIN_TX_FEE;
@@ -2248,7 +2248,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
     return true;
 }
 
-// VADE: attempt to generate suitable proof-of-stake
+// Corgicoin: attempt to generate suitable proof-of-stake
 bool CBlock::SignBlock(CWallet& wallet, int64_t nFees)
 {
     // if we are trying to sign
@@ -2336,7 +2336,7 @@ bool CheckDiskSpace(uint64_t nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "VADE", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "Corgicoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -2423,9 +2423,9 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // Genesis block
 
-         const char* pszTimestamp = "Corgicoin Hybrid";
+         const char* pszTimestamp = "The NewCorgi is here - Corgi V2";
         CTransaction txNew;
-        txNew.nTime = 1612240182;
+        txNew.nTime = 1613278816;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2436,9 +2436,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1612240182;
+        block.nTime    = 1613278816;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 144722;
+        block.nNonce   = 133744;
 
         if (false && (block.GetHash() != hashGenesisBlock)) {
             // This will figure out a valid hash and Nonce if you're
